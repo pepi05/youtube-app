@@ -11,12 +11,14 @@ const Videos = ({ videos, direction }) => {
       direction={direction || "row"}
       flexWrap="wrap"
       justifyContent="start"
-      gap={2}
+      // gap={2}
     >
       {videos.map((item, index) => {
         return (
           <Box key={index}>
-            {item.id.videoId && <VideoCard video={item} />}
+            {item.id.videoId && (
+              <VideoCard video={item} marginBottom="15px" marginRight="15px" />
+            )}
             {item.id.channelId && <ChannelCard channelDetail={item} />}
           </Box>
         );
